@@ -1,7 +1,7 @@
+const container = document.querySelector('.container');
 window.onload = () => {
     addEventListener('mousemove', (e) => {
-        const doc_element = document.documentElement,
-              container = document.querySelector('.container');
+        const doc_element = document.documentElement;
 
         let mouse_x_ratio = (e.layerX / doc_element.clientWidth) * 100,
             bg_x_pos = ((mouse_x_ratio) / 6.75) * -1
@@ -58,8 +58,7 @@ const set_img = (which) => {
         else if (current_img == 0) current_img = images.length - 1;
     }
 
-    console.log(current_img);
-    document.querySelector('.container').style.backgroundImage = images[current_img];
+    container.style.backgroundImage = images[current_img];
 }
 
 set_img()
